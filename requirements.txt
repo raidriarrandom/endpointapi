@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+pyodbc  # If you're using databases
+msal    # For Azure authentication
+

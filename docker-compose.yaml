@@ -1,0 +1,13 @@
+
+services:
+  fastapi-app:
+    build:
+      context: .
+      dockerfile: Dockerfile  # Ensure this points to the right location relative to the context
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./endpoints:/app  # Ensure accurate host path
+    env_file:
+      - .env
+    restart: unless-stopped
