@@ -16,6 +16,11 @@ tags_metadata = [
 # Input to the Application title setting to the App
 app = FastAPI(title="Data Education Holdings LLC - Azure SQL DB Data API", openapi_tags=tags_metadata)
 
+@app.get("/")
+def root():
+    return {"message": "Azure SQL DB Data API is running. Visit /docs for endpoints."}
+
+
 # Load environment variables from .env file using docker.yaml file
 SURYA_ID = os.getenv("SURYA_ID")  # Secret value from Azure App secret, you could see docker.yaml file
 TENANT_ID = os.getenv("TENANT_ID")  # TENANT_ID from Azure App secret, you could see docker.yaml file
